@@ -13,6 +13,9 @@ namespace L20250217
             X = inX;
             Y = inY;
             Shape = inShape;
+            Engine.Instance._posX = 0;
+            Engine.Instance._posY = 0;
+
         }
 
         public override void Update()
@@ -22,19 +25,52 @@ namespace L20250217
             //GetKeyDown
             if (Input.GetKeyDown(ConsoleKey.W) || Input.GetKeyDown(ConsoleKey.UpArrow))
             {
-                Y--;
+                if(Engine.Instance._posY <= 0)
+                {
+
+                }
+                else
+                {
+                    Engine.Instance._posY -= 1;
+                    Y--;
+                }
+
             }
             if (Input.GetKeyDown(ConsoleKey.S) || Input.GetKeyDown(ConsoleKey.DownArrow))
             {
-                Y++;
+                if (Engine.Instance._posY >= 7)
+                {
+
+                }
+                else
+                {
+                    Engine.Instance._posY += 1;
+                    Y++;
+                }
             }
             if (Input.GetKeyDown(ConsoleKey.A) || Input.GetKeyDown(ConsoleKey.LeftArrow))
             {
-                X--;
+                if (Engine.Instance._posX <= 0)
+                {
+
+                }
+                else
+                {
+                    Engine.Instance._posX -= 1;
+                    X--;
+                }
             }
             if (Input.GetKeyDown(ConsoleKey.D) || Input.GetKeyDown(ConsoleKey.RightArrow))
             {
-                X++;
+                if (Engine.Instance._posX >= 7)
+                {
+
+                }
+                else
+                {
+                    Engine.Instance._posX += 1;
+                    X++;
+                }
             }
         }
     }

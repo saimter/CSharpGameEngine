@@ -31,7 +31,10 @@ namespace L20250217
 
 
         protected bool isRunning = true;
+        public int _posX = -1, _posY = -1;
+        public int _posXE = -1, _posYE = -1;
 
+        public int _XE = -1, _YE = -1;
 
         public void Load()
         {
@@ -99,6 +102,20 @@ namespace L20250217
         {
             Console.Clear();
             world.Render();
+            Console.WriteLine($"");
+
+            if ((_posX == _posXE) && (_posY == _posYE))
+            {
+                Console.WriteLine($"GAME OVER");
+            }
+            else if ((_posX == 7) && (_posY == 7))
+            {
+                Console.WriteLine($"STAGE CLEAR!!!");
+            }
+            else {
+                Console.WriteLine($"{_posX},{_posY}");
+                Console.WriteLine($"{_posXE},{_posYE}");
+            }
         }
 
 

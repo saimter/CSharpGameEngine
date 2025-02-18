@@ -32,6 +32,5 @@ namespace L20250217
                 gameObjects[i].Render();
             }
         }
-
     }
 }

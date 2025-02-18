@@ -15,6 +15,14 @@ namespace L20250217
             X = inX;
             Y = inY;
             Shape = inShape;
+
+            Engine.Instance._posXE = 3;
+            Engine.Instance._posYE = 4;
+
+            //Engine.Instance._XE = -1;
+            //Engine.Instance._YE = -1;
+
+
         }
 
         public override void Update()
@@ -23,19 +31,40 @@ namespace L20250217
 
             if (Direction == 0)
             {
-                Y--;
+                if(Engine.Instance._posYE > 0)
+                {
+                    Engine.Instance._posYE -= 1;
+                    Y--;
+                    Engine.Instance._YE = Y;
+                }
             }
             if (Direction == 1)
             {
-                Y++;
+                if (Engine.Instance._posYE < 7)
+                {
+                    Engine.Instance._posYE += 1;
+                    Y++;
+                    Engine.Instance._YE = Y;
+                }
             }
+
             if (Direction == 2)
             {
-                X--;
+                if (Engine.Instance._posXE > 0)
+                {
+                    Engine.Instance._posXE -= 1;
+                    X--;
+                    Engine.Instance._XE = X;
+                }
             }
             if (Direction == 3)
             {
-                X++;
+                if (Engine.Instance._posXE < 7)
+                {
+                    Engine.Instance._posXE += 1;
+                    X++;
+                    Engine.Instance._XE = X;
+                }
             }
         }
     }
